@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add New Post</title>
+  <style>
+    body {
+      padding: 40px;
+      padding-top: 0;
+      background-image: url(/images/choosing-bg.jpg);
+      color: white;
+      font-size: 20px; 
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    a {
+      color: white;
+      text-decoration: none;
+      margin-bottom: 20px;
+      display: inline-block; 
+    }
+    
+    .admin-title {
+      margin-bottom: 20px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    select,
+    textarea {
+      display: block;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 0.7rem 0.75rem;
+      margin-bottom: 1rem;
+      font-family: inherit; 
+      font-size: inherit; 
+    }
+    
+    .btn {
+      background-color: #007bff;
+      border: none;
+      color: white; 
+      padding: 12px 20px; /* Adjusted padding for smaller buttons */
+      text-decoration: none;
+      margin: 4px 2px; 
+      cursor: pointer;
+      display: inline-block; /* To maintain block layout */
+      width: 120px; /* Fixed width for uniformity */
+      transition: background-color 0.3s; /* Smooth transition */
+      font-size: 16px; /* Consistent font size for buttons */
+      text-align: center; /* Center the text */
+    }
+    
+    .btn:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    .btn-delete {
+      padding: 12px 20px; /* Match padding with other buttons */
+      background-color: #dc3545; /* Bootstrap danger color */
+    }
+
+    .btn-delete:hover {
+      background-color: #c82333; /* Darker red on hover */
+    }
+  </style>
+</head>
+
+<body>
+  <a href="/dashboard" class="btn">&larr; Back</a>
+  <div class="admin-title">
+    <h2 style="color: #f5a425;">Add New Course</h2>
+  </div>
+  
+  <form action="/add-post" method="POST">
+   
+    <label for="title" style="color: #f5a425;"><b>Title</b></label><br><br>
+    <input type="text" placeholder="Post Title" name="title" required>
+
+    
+    <label for="link" style="color: #f5a425;"><b>Video Link</b></label><br><br>
+    <input type="text" placeholder="YouTube Link" name="link" required>
+  
+    <label for="description" style="color: #f5a425;"><b>Description</b></label><br><br>
+    <textarea name="description" cols="50" rows="4" placeholder="Enter description here..." required></textarea>
+     
+    <input type="submit" value="Add" class="btn">
+  </form>
+  
+</body>
+
+</html>
+

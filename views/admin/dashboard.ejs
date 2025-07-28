@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 40px;
+      padding-top: 0;
+      background-image: url(/images/choosing-bg.jpg);
+      color: white;
+      font-size: 25px;
+      font-family: Arial, sans-serif; 
+    }
+    
+    a {
+      color: white;
+      text-decoration: none; 
+    }
+
+    .admin-title {
+      margin-bottom: 20px; 
+    }
+
+    .button, .btn {
+      background-color: #007bff; 
+      color: white;
+      padding: 10px 20px; 
+      border: none; 
+      border-radius: 5px; 
+      cursor: pointer;
+      transition: background-color 0.3s; 
+      text-align: center; 
+      display: inline-block; 
+      width: 120px; 
+      font-size: 16px; 
+    }
+
+    .button:hover, .btn:hover {
+      background-color: #0056b3; 
+    }
+
+    .admin-posts {
+      list-style-type: none; 
+      padding: 0; 
+    }
+
+    .admin-posts li {
+      margin: 10px 0; 
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.6);
+      border-radius: 5px; 
+    }
+
+    .admin-post-controls {
+      margin-top: 10px; 
+    }
+
+    .btn-delete {
+      background-color: #dc3545; 
+    }
+
+    .btn-delete:hover {
+      background-color: #c82333; 
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-title">
+    <h2 style="color: #f5a425;">Courses</h2>
+    <a href="/add-post" class="button">+ Add New</a>
+  </div>
+  
+  <ul class="admin-posts">
+    <% data.forEach(post => { %>
+      <li>
+        <a href="/post/<%= post._id %>">
+          <%= post.title %> &nearr;
+        </a>
+        <div class="admin-post-controls">
+          <a href="/edit-post/<%= post._id %>" class="btn">Edit</a>
+          <form action="/delete-post/<%= post._id %>?_method=DELETE" method="POST" style="display:inline;">
+            <input type="submit" value="Delete" class="btn-delete btn">
+          </form>
+        </div>
+      </li>
+    <% }) %>
+  </ul>
+  
+</body>
+</html>
