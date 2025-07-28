@@ -1,7 +1,4 @@
 learnloop
-
-Currently Hosted on Onrender - https://mbu-57os.onrender.com/
-
 Project Overview:
 An online educational platform offering technical skill courses for CSE students.
 Provides virtual classes with pre-recorded videos.
